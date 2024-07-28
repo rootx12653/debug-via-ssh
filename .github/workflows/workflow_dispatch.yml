@@ -10,7 +10,7 @@ on:
         default: ubuntu
 jobs:
   start_ssh_session:
-    runs-on: ${{ github.event.
+    runs-on: ${{ ubuntu-latest
     name: Start the SSH session
     steps:
     - name: Start SSH session
