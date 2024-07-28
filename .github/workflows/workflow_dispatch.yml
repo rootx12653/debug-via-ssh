@@ -1,14 +1,4 @@
--
-        name: Build Tag and Push Docker image
-        uses: docker/build-push-action@v4
-        with:
-          file: nextjs-blog/docker/Dockerfile
-          context: nextjs-blog
-          tags: ${{ steps.dockermeta.outputs.tags }}
-          labels: ${{ steps.dockermeta.outputs.labels }}
-          pull: true
-          push: true
-          
+
 name: Dispatch a SSH session
 
 on:
@@ -31,4 +21,4 @@ jobs:
         SSH_PASS: ${{ secrets.SSH_PASS }}
         NGROK_TIMEOUT: 2500
 cache-from: type=registry,ref=${{ env.ECR_FULL_REPO }}:dockercache
- cache-to: type=registry,ref=${{ env.ECR_FULL_REPO }}:dockercache,mode=max,image-manifest=true
+cache-to: type=registry,ref=${{ env.ECR_FULL_REPO }}:dockercache,mode=max,image-manifest=true
