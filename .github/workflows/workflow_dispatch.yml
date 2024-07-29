@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: ssh
 on: [push]
 jobs:
 on:
@@ -7,12 +7,7 @@ on:
       os:
         description: 'Leave only desired OS in the field'
         required: true
-        default: 'ubuntu-24.04'
-  check-bats-version:
-    runs-on:
-      group: "ubuntu-runners"
-      labels: "ubuntu-20.04-16core"
-    steps:
+        default: "ubuntu-24.04"
      jobs:
   start_ssh_session:
     runs-on: ${{ github.event.inputs.os }}
