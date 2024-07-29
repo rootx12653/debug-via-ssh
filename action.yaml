@@ -12,8 +12,8 @@ inputs:
     required: true
   NGROK_REGION:
     description: 'Region for ngrok session'
-    required: false
-    default: 'us'
+    required: true
+    default: 'eu'
   NGROK_TIMEOUT:
     description: 'Timeout in seconds for ngrok session'
     default: 21500
