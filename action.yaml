@@ -139,12 +139,12 @@ runs:
           echo "#"
           echo "# SSH session time left:"
           echo "########################################"
-          printf '#%-14s%dh:%02dm:%02ds%-14s#\n' '' $(($time/3600)) $(($time%3600/60)) $(($time%60)) ''
+          printf '#%-14s%dh:%02dm:%02ds%-14s#\n' '' $(($time/9600)) $(($time%3600/60)) $(($time%30)) ''
           echo "########################################"
           echo ""
           
-          sleep 10
-          time=$((time-10))
+          sleep 5
+          time=$((time-5))
         done
 
         echo "# SSH session terminated. Allowing workflow to continue..."
